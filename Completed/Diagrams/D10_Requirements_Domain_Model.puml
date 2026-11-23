@@ -1,0 +1,49 @@
+@startuml
+title Project P8 - Domain & Conceptual Model
+skinparam classAttributeIconSize 0
+
+class Circuit {
+  +String circuitName
+  +List<Port> ports
+  +List<GateNode> nodes
+  +List<Connection> connections
+  +Boolean isValid()
+}
+
+class Port {
+  +String name
+  +String direction
+  +Integer width
+}
+
+class GateNode {
+  +String nodeId
+  +String gateType
+  +Integer markerId
+  +List<Pin> inputPins
+  +Pin outputPin
+}
+
+class Pin {
+  +String pinName
+  +String terminalType
+}
+
+class Connection {
+  +String sourceEndpoint
+  +String targetEndpoint
+  +String netName
+}
+
+Circuit "1" *-- "many" Port
+Circuit "1" *-- "many" GateNode
+GateNode "1" *-- "many" Pin
+Circuit "1" *-- "many" Connection
+
+note bottom of Circuit
+  Gaps & Assumptions:
+  - Width is strictly 1 bit (STD_LOGIC).
+  - Max 8 GateNodes per circuit.
+  - No feedback loops allowed (DAG).
+end note
+@enduml

@@ -1,0 +1,27 @@
+%% Deliverable 11: Design Modeling Diagrams - Component Seam
+%% Project P8: Visual Digital Design Compiler
+
+flowchart LR
+    subgraph AndroidApp["Offline Android Application Environment"]
+        UI["Android UI Layer<br/>(CameraActivity, ReviewView)"]
+        P8A["P8A Vision Engine<br/>(ArUcoDetector, LineTracer)"]
+        IR[("Circuit Graph IR v1<br/>JSON Storage")]
+        P8B["P8B Compiler Core<br/>(Validator, VhdlGenerator)"]
+        VHD[("App-Private .vhd Storage<br/>(Rule 3 Collision Handling)")]
+        SAF["Storage Access Framework<br/>(User Export)"]
+    end
+
+    subgraph DesktopEnvironment["External Desktop Test Environment"]
+        Runner["Desktop Fixture Runner<br/>(JUnit 5 / CLI)"]
+        GHDL["GHDL Toolchain (VHDL-2008)<br/>(5-Second Process Timeout)"]
+        Evidence[("Verification Records & SHA-256")]
+    end
+
+    UI -->|Capture / Review| P8A
+    P8A -->|Serialize / Handoff| IR
+    IR -->|Validate & Compile| P8B
+    P8B -->|Save Output| VHD
+    VHD -->|User Copy Export| SAF
+    SAF -.->|Manual File Transfer| Runner
+    Runner -->|Invoke Process| GHDL
+    GHDL -->|Exit Code / Logs| Evidence

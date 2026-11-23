@@ -1,0 +1,37 @@
+%% Deliverable 10: Requirements Modeling Diagrams
+%% Project P8: Visual Digital Design Compiler
+
+classDiagram
+    direction TB
+    class Circuit {
+        +String circuitName
+        +List~Port~ ports
+        +List~GateNode~ nodes
+        +List~Connection~ connections
+        +validate() Boolean
+    }
+    class Port {
+        +String name
+        +String direction
+        +Int width
+    }
+    class GateNode {
+        +String nodeId
+        +String gateType
+        +Int markerId
+        +List~Pin~ inputPins
+        +Pin outputPin
+    }
+    class Pin {
+        +String pinName
+        +String terminalType
+    }
+    class Connection {
+        +String sourceEndpoint
+        +String targetEndpoint
+        +String netName
+    }
+    Circuit "1" *-- "many" Port
+    Circuit "1" *-- "many" GateNode
+    GateNode "1" *-- "many" Pin
+    Circuit "1" *-- "many" Connection
