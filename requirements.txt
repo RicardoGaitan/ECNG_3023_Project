@@ -1,0 +1,12 @@
+ID,Requirement Name,Requirement,Priority,Release,MR Links,Derived FR(s),Design Artifacts,Test Cases,Evidence Link,Owner,Status,Notes
+USER1,Account Set Up,"On first opening, the user will be prompted with an account creation window. Then, an account customisation (Only Required Once)",Essential,R1,"MR-02; MR-03; MR-05; MR-07; MR-08; MR-09; MR-10; MR-11; MR-13; MR-15; MR-16","","","","","","In-Refine",""
+USER2,Role-Based account selection,"On app start, users choose Care Giver or Care Receiver roles; caregiver role requires verification.",Essential,R1,"MR-02; MR-03; MR-05; MR-07; MR-08; MR-09; MR-11; MR-13; MR-15","","","","","","In-Refine",""
+USER3,Caregiver pill scheduling,"Care Giver can add medications with details (name, dose, frequency, times).",Essential,R1,"MR-02; MR-03; MR-05; MR-07; MR-08; MR-09; MR-10; MR-11; MR-14; MR-15; MR-16","","","","","","In-Refine",""
+USER4,Patient pill logging,"Patient can mark pills as taken by tapping a button.",Essential,R1,"MR-02; MR-03; MR-05; MR-07; MR-08; MR-09; MR-11; MR-15; MR-16","","","","","","In-Refine",""
+USER5,Shared Data Synchronisation,"Both roles see the same account data (caregiver schedules, patient logs).",Essential,R1,"MR-02; MR-03; MR-05; MR-07; MR-08; MR-09; MR-10; MR-11; MR-13; MR-14; MR-16","","","","","","In-Refine",""
+USER6,Reminders/Alerts,"App notifies care receiver at scheduled times; notifies caregiver when patient logs taken pills.",Essential,R1,"MR-02; MR-03; MR-05; MR-07; MR-08; MR-09; MR-10; MR-11; MR-14; MR-15; MR-16","","","","","","In-Refine",""
+USER7,Progress Tracking,"Provide progress tracking for adherence over time.",Recommended,R2,"MR-02; MR-05; MR-07; MR-08; MR-09; MR-14; MR-16","","","","","","In-Refine",""
+USER8,Notes/Comments,"Allow notes/comments on schedules or logs.",Recommended,R2,"MR-02; MR-05; MR-07; MR-08; MR-09; MR-15","","","","","","In-Refine",""
+USER9,Voice-assisted using AI,"Voice assistance for interactions with AI features.",Recommended,R2,"MR-02; MR-03; MR-05; MR-07; MR-08; MR-09; MR-11; MR-13; MR-14","","","","","","In-Refine",""
+USER10,Simple onboarding/tutorial,"First-time setup guide showing how Care Giver sets pills & Care Receiver logs them.",Recommended,R2,"MR-02; MR-05; MR-07; MR-08; MR-09; MR-15","","","","","","In-Refine",""
+USER11,Unauthorised User (PIN/Passkey),"Each profile can require a PIN/passkey for account entry.",Recommended,R2,"MR-02; MR-03; MR-05; MR-07; MR-08; MR-09; MR-11; MR-13","","","","","","In-Refine",""
